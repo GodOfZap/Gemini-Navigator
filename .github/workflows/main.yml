@@ -1,0 +1,68 @@
+name: Update Contributors
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily
+  workflow_dispatch:
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Wait for 10 seconds before fetching contributors
+        run: |
+          echo "Waiting for 10 seconds..."
+          sleep 10
+
+      - name: Fetch contributors and update README
+        run: |
+          echo "Fetching contributors from GitHub API..."
+          RESPONSE=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/GodOfZap/Gemini-Navigator/contributors?per_page=100&page=1")
+
+          if echo "$RESPONSE" | jq -e 'type == "array"' > /dev/null; then
+            CONTRIBUTORS=$(echo "$RESPONSE" | jq -r '.[] | "<a href=\"\(.html_url)\">\n  <img src=\"\(.avatar_url)\" width=\"60\" height=\"60\" alt=\"\(.login)\" style=\"border-radius: 50%;\" />\n</a>\n"')
+            echo "Fetched contributors:"
+            echo "$CONTRIBUTORS"
+
+            awk '
+              /<!-- CONTRIBUTORS:START -->/ {print; print "__CONTRIBUTORS__"; skip=1; next}
+              /<!-- CONTRIBUTORS:END -->/ {skip=0; print; next}
+              skip != 1
+            ' README.md > temp.md
+
+            sed "/__CONTRIBUTORS__/{
+              r /dev/stdin
+              d
+            }" temp.md <<< "$CONTRIBUTORS" > README.md
+          else
+            echo "Unexpected response from GitHub API:"
+            echo "$RESPONSE"
+            echo "Skipping README update."
+          fi
+
+      - name: Refresh Shields.io badges
+        run: |
+          curl -s https://img.shields.io/badge/hacktoberfest-2025-blueviolet > /dev/null
+          curl -s "https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99" > /dev/null
+          curl -s https://img.shields.io/badge/Contributions-welcome-violet.svg?style=flat&logo=git > /dev/null
+          curl -s https://img.shields.io/github/issues-pr/GodOfZap/Gemini-Navigator > /dev/null
+          curl -s https://img.shields.io/github/contributors/GodOfZap/Gemini-Navigator?color=2b9348 > /dev/null
+
+      - name: Commit and push changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/GodOfZap/Gemini-Navigator.git
+          git add README.md
+          git diff --cached --quiet || git commit -m "Update contributors list"
+          git push origin HEAD:main
