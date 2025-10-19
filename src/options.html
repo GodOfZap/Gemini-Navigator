@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <style>
+        .options-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .options-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .options-title {
+            background: linear-gradient(135deg, #00f0ff, #ff00d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .options-subtitle {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #00f0ff;
+        }
+
+        .form-help {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.25rem;
+        }
+
+        .api-key-input {
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .select-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .select-wrapper {
+            flex: 1;
+        }
+
+        .status-message {
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .status-success {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            color: #00ff00;
+        }
+
+        .status-error {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            color: #ff4444;
+        }
+        
+        /* FIX: Added style to ensure hidden elements use display: none; */
+        .hidden {
+            display: none;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+        }
+
+        .test-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        /* FIX: Added style for the button in the test-section to replace inline style */
+        .test-section .secondary-button {
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="options-container">
+        <header class="options-header">
+            <h1 class="options-title">Gemini Navigator Settings</h1>
+            <p class="options-subtitle">Configure your Gemini API connection and preferences</p>
+        </header>
+
+        <form id="settingsForm">
+            <div class="form-group">
+                <label for="apiKey" class="form-label">Gemini API Key</label>
+                <input 
+                    type="password" 
+                    id="apiKey" 
+                    class="form-input api-key-input"
+                    placeholder="Enter your Gemini API key..."
+                >
+                <div class="form-help">
+                    Get your API key from <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: #00f0ff;">Google AI Studio</a>
+                </div>
+            </div>
+
+            <div class="select-group">
+                <div class="form-group select-wrapper">
+                    <label for="model" class="form-label">Model</label>
+                    <select id="model" class="form-input">
+                        <option value="gemini-2.5-flash" selected>Gemini 2.5 Flash (Recommended)</option>
+                        <option value="gemini-2.5-pro">Gemini 2.5 Pro (Most Capable)</option>
+                        <option value="gemini-2.5-flash-lite">Gemini 2.5 Flash-Lite (Fastest/Cost-Effective)</option>
+                        
+                        </select>
+                </div>
+
+                <div class="form-group select-wrapper">
+                    <label for="maxTokens" class="form-label">Max Tokens</label>
+                    <select id="maxTokens" class="form-input">
+                        <option value="2048">2,048</option>
+                        <option value="4096">4,096</option>
+                        <option value="8192">8,192</option>
+                        <option value="16384" selected>16,384</option>
+                        <option value="65536">65,536</option> 
+                    </select>
+                </div>
+            </div>
+
+            <div id="statusMessage" class="status-message hidden"></div>
+
+            <div class="test-section">
+                <h3 class="form-label">Test Connection</h3>
+                <div class="form-help">Verify your API key and settings are working correctly</div>
+                <button type="button" id="testConnection" class="secondary-button">
+                    Test Gemini Connection
+                </button>
+                <div id="testResult" class="form-help"></div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" id="resetButton" class="text-button">
+                    Reset to Defaults
+                </button>
+                <button type="submit" class="primary-button">
+                    Save Settings
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

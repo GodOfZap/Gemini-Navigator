@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <h2>Quick Gemini</h2>
+            <button id="openSidebar" class="icon-btn" title="Open Chat Sidebar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2 6h20v2H2zm0 5h20v2H2zm0 5h20v2H2z"/>
+                </svg>
+            </button>
+        </header>
+
+        <div class="popup-content">
+            <textarea 
+                id="quickPrompt" 
+                placeholder="Ask Gemini a quick question..." 
+                rows="4"
+            ></textarea>
+            
+            <button id="quickSend" class="primary-button">
+                Send to Gemini
+            </button>
+
+            <div id="quickResponse" class="response-area hidden">
+                <div class="response-content"></div>
+                <button id="copyResponse" class="secondary-button">
+                    Copy Response
+                </button>
+            </div>
+        </div>
+
+        <footer class="popup-footer">
+            <button id="openOptions" class="text-button">Settings</button>
+            <button id="viewHistory" class="text-button">History</button>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
