@@ -1,0 +1,54 @@
+{
+  "manifest_version": 2,
+  "name": "Gemini Navigator",
+  "version": "1.0.0",
+  "description": "A Simplistic Firefox extension for interacting with Google's Gemini API",
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["src/background.js"],
+    "persistent": false
+  },
+
+  "browser_action": {
+    "default_title": "Gemini Navigator",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "32": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+
+  "sidebar_action": {
+    "default_title": "Gemini Chat",
+    "default_panel": "src/sidebar.html",
+    "default_icon": "icons/icon.png"
+  },
+
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content_script.js"]
+    }
+  ],
+
+  "icons": {
+    "16": "icons/favicon.ico",
+    "32": "icons/favicon.ico",
+    "48": "icons/favicon.ico",
+    "128": "icons/favicon.ico"
+  }
+}
