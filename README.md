@@ -57,6 +57,14 @@ Gemini Navigator allows you to interact with the **Gemini AI** directly from a F
     - Chat with Gemini AI directly using the sidebar (other context features are coming soon for now you can chat and view your history)
 
 ---
+## Video Demo
+
+Here is a demo video:
+
+
+https://github.com/user-attachments/assets/5bfafd33-8a5f-40aa-8ecb-595b95df6b81
+
+
 
 ## 🤝 Contribute
 
