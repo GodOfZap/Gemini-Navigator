@@ -1,6 +1,7 @@
 # 🛡️ Gemini Navigator
 
 This repository contains a **Firefox sidebar extension** for interacting with **Gemini AI**, enabling context-aware chat and integration with selected webpage content.
+This is my project for Open Source Hackfest(MLH)[https://events.mlh.io/events/12808]
 
 <div align="center">
 
