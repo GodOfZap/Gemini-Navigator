@@ -51,8 +51,9 @@ Gemini Navigator allows you to interact with the **Gemini AI** directly from a F
     - Select the `manifest.json` file from the project folder
 
 3. **Using the extension:**
+    - Click setting icon and add the Gemini API, modal , max token limit
     - Open the sidebar from the Firefox sidebar menu  
-    - Chat with Gemini AI directly using the sidebar (other context features are coming soon)
+    - Chat with Gemini AI directly using the sidebar (other context features are coming soon for now you can chat and view your history)
 
 ---
 
