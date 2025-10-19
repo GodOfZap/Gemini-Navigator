@@ -1,35 +1,66 @@
-# Code of Conduct
+# 🌐 Code of Conduct
 
-## Our Pledge
+## 💎 Our Pledge
 
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in **Gemini Navigator** a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+We, as contributors and maintainers of **Gemini Navigator**, pledge to make participation in this project a **welcoming, harassment-free, and inclusive experience** for everyone — regardless of:
 
-## Our Standards
+> Age, body size, disability, ethnicity, gender identity or expression, level of experience, nationality, personal appearance, race, religion, sexual orientation, or any other characteristic.
 
-Examples of behavior that contributes to a positive environment include:
+We are committed to fostering a respectful and collaborative community that values **diversity, empathy, and open participation**.
 
-- Using welcoming and inclusive language
-- Being respectful of differing viewpoints and experiences
-- Gracefully accepting constructive criticism
-- Focusing on what is best for the community
-- Showing empathy towards other community members
+---
 
-Unacceptable behavior includes:
+## 🌟 Our Standards
 
-- Harassment, intimidation, or discrimination in any form
-- Offensive comments related to gender, sexual orientation, race, religion, or other personal characteristics
-- Public or private harassment
-- Trolling or insulting/derogatory comments
-- Other conduct which could reasonably be considered inappropriate in a professional setting
+### ✅ Positive Behavior Includes
 
-## Reporting Issues
+- Using **welcoming and inclusive language**  
+- Being **respectful** of differing viewpoints and experiences  
+- Accepting **constructive criticism** gracefully  
+- Focusing on what is **best for the community**  
+- Showing **kindness and empathy** toward others  
 
-If you are subject to or witness unacceptable behavior, please report it by opening an issue on GitHub or contacting the repository maintainers directly.
+### 🚫 Unacceptable Behavior Includes
 
-## Enforcement
+- Harassment, intimidation, or discrimination in any form  
+- Offensive comments related to gender, race, religion, or other identities  
+- Public or private harassment  
+- Trolling, personal attacks, or derogatory remarks  
+- Conduct that could reasonably be considered inappropriate in a professional setting  
 
-Maintainers of **Gemini Navigator** are responsible for clarifying standards of acceptable behavior and enforcing this code of conduct. We may take appropriate action, including warning, temporary suspension, or banning contributors for behavior that violates this Code of Conduct.
+> We encourage everyone to help maintain a positive and productive environment.
 
-## Acknowledgments
+---
 
-This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.
+## 🧭 Reporting Issues
+
+If you experience or witness unacceptable behavior, please:
+
+1. Report it by opening an **[Issue](https://github.com/GodOfZap/gemini-navigator/issues)**, **or**
+2. Contact a **repository maintainer directly** via their GitHub profile.  
+
+All complaints will be reviewed and investigated promptly, fairly, and confidentially.
+
+---
+
+## ⚖️ Enforcement
+
+Project maintainers are responsible for clarifying and enforcing this Code of Conduct.  
+They may take appropriate corrective actions such as:
+
+- Issuing warnings  
+- Temporary suspension from contributing  
+- Permanent bans for severe or repeated violations  
+
+All enforcement decisions will be made **fairly and transparently**, prioritizing community well-being.
+
+---
+
+## 🙏 Acknowledgments
+
+This Code of Conduct is adapted from the **[Contributor Covenant](https://www.contributor-covenant.org)**, version **2.1**,  
+a widely used standard for fostering inclusive open-source communities.
+
+---
+
+<p align="center">🌟 Thank you for helping make <strong>Gemini Navigator</strong> a safe, welcoming, and inclusive space. 🌟</p>
