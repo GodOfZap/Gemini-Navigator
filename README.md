@@ -21,7 +21,7 @@ This repository contains a **Firefox sidebar extension** for interacting with **
 - [🚀 Get Started](#-get-started)
   - [Requirements](#requirements)
   - [Installation (for local testing)](#installation-for-local-testing)
-- [🎥 Video Demo](#-video-demo)
+<!-- [🎥 Video Demo](#-video-demo)<!-->
 - [🤝 Contribute](#-contribute)
 - [✨ Contributors](#-contributors)
 - [📄 License](#-license)
@@ -76,14 +76,14 @@ You can maintain conversation history, send prompts quickly, and view formatted 
 
 ---
 
-## 🎥 Video Demo
+<!--## 🎥 Video Demo
 
 Here’s a quick demo of Gemini Navigator in action:
 
 🔗 **[Watch the Demo](https://github.com/user-attachments/assets/5bfafd33-8a5f-40aa-8ecb-595b95df6b81)**
 
 ---
-
+<!-->
 ## 🤝 Contribute
 
 Contributions are welcome! 🎉  
